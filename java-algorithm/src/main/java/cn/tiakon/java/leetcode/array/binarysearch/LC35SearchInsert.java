@@ -21,49 +21,28 @@ public class LC35SearchInsert {
      * @author tiankai.me@gmail.com on 2022/8/22 14:41.
      */
     public int searchInsert(int[] nums, int target) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
         int left = 0, right = nums.length - 1;
         while (left <= right) {
             int middle = left + (right - left) / 2;
-            if (target == nums[middle]) {
-                return middle;
-            } else if (target > nums[middle]) {
-                left = middle + 1;
-            } else {
-                right = middle - 1;
-            }
+            if (nums[middle] > target) right = middle - 1;
+            else if (nums[middle] < target) left = middle + 1;
+            else return middle;
         }
         return left;
     }
 
-    /**
-     * 作者：guanpengchn
-     * 链接：https://leetcode.cn/problems/search-insert-position/solution/hua-jie-suan-fa-35-sou-suo-cha-ru-wei-zhi-by-guanp/
-     * 来源：力扣（LeetCode）
-     * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-     *
-     * @author tiankai.me@gmail.com on 2022/8/9 16:15.
-     */
+    // 对数器
     public int searchInsertV2(int[] nums, int target) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        int left = 0;
-        int right = nums.length - 1;
-        while (left < right) {
-            int mid = (left + right) / 2;
-            if (target == nums[mid]) {
-                return mid;
-            } else if (target < nums[mid]) {
+        int n = nums.length;
+        int left = 0, right = n - 1, ans = n;
+        while (left <= right) {
+            int mid = ((right - left) >> 1) + left;
+            if (target <= nums[mid]) {
+                ans = mid;
                 right = mid - 1;
-            } else {
-                left = mid + 1;
-            }
+            } else left = mid + 1;
         }
-        //此时left = right
-        return target <= nums[left] ? left : left + 1;
+        return ans;
     }
 
 }
