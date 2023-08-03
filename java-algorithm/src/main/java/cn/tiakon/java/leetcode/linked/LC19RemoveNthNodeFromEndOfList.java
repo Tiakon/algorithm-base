@@ -16,6 +16,7 @@ public class LC19RemoveNthNodeFromEndOfList {
     /**
      * 快慢指针
      * 设想假设设定了双指针p和q的话，当q指向末尾的NULL，p与q之间相隔的元素个数为n时，那么删除掉p的下一个指针就完成了要求。
+     * 使用一个临时节点解决删除头节点的问题
      * <p>
      * 复杂度分析：
      * 时间复杂度：O(N)
