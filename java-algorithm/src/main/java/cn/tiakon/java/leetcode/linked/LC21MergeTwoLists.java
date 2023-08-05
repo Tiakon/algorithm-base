@@ -1,6 +1,7 @@
 package cn.tiakon.java.leetcode.linked;
 
 import cn.tiakon.java.leetcode.datastructure.ListNode;
+import cn.tiakon.java.utils.MathRandomUtil;
 
 /**
  * 21. 合并两个有序链表
@@ -54,42 +55,43 @@ public class LC21MergeTwoLists {
      *
      * @author tiankai.me@gmail.com on 2022/8/21 7:50.
      */
-    public ListNode mergeTwoListsV2(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoListsV2(ListNode list1, ListNode list2) {
         ListNode preHead = new ListNode(-1);
-        ListNode prev = preHead;
-        while (l1 != null && l2 != null) {
-            if ((int) (l1.val) <= (int) (l2.val)) {
-                prev.next = l1;
-                l1 = l1.next;
+        ListNode node = preHead;
+        while (list1 != null && list2 != null) {
+            if ((int) (list1.val) <= (int) (list2.val)) {
+                node.next = list1;
+                list1 = list1.next;
             } else {
-                prev.next = l2;
-                l2 = l2.next;
+                node.next = list2;
+                list2 = list2.next;
             }
-            prev = prev.next;
+            node = node.next;
         }
         // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
-        prev.next = l1 == null ? l2 : l1;
+        node.next = (list1 == null ? list2 : list1);
         return preHead.next;
     }
 
     /**
      * 3. 递归
+     * 复杂度分析
+     * 时间复杂度：O(n+m)，其中 n 和 m 分别为两个链表的长度。
+     * 空间复杂度：O(1)。
      * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
      * 内存消耗： 40.8 MB , 在所有 Java 提交中击败了 79.55% 的用户
      *
      * @author tiankai.me@gmail.com on 2022/8/24 10:23.
      */
-    public ListNode mergeTwoListsV3(ListNode l1, ListNode l2) {
-        if (l1 == null) {
-            return l2;
-        } else if (l2 == null) {
-            return l1;
-        } else if ((int) l1.val < (int) l2.val) {
-            l1.next = mergeTwoLists(l1.next, l2);
-            return l1;
+    public ListNode mergeTwoListsV3(ListNode list1, ListNode list2) {
+        if (list1 == null) return list2;
+        else if (list2 == null) return list1;
+        else if ((int) list1.val < (int) list2.val) {
+            list1.next = mergeTwoListsV3(list1.next, list2);
+            return list1;
         } else {
-            l2.next = mergeTwoLists(l1, l2.next);
-            return l2;
+            list2.next = mergeTwoListsV3(list1, list2.next);
+            return list2;
         }
     }
 
