@@ -42,7 +42,7 @@ public class LC234PalindromeLinkedList {
      * 快慢指针解法(有图LC234)
      * 快指针走到末尾，慢指针刚好到中间。其中慢指针将前半部分反转。然后比较反转后的前半部分与后半部分是否相等。
      * 复杂度分析
-     * 时间复杂度:
+     * 时间复杂度: O(n)
      * 空间复杂度: O(1)
      *
      * @author tiankai.me@gmail.com on 2022/10/24 下午5:03.
