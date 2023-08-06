@@ -28,7 +28,7 @@
 
 
 
-## 2. 习题集
+## 2. 习题分类
 
 ### 2.1 数据结构
 
@@ -64,7 +64,7 @@
 4. 递归、回溯
    1. [递归](https://leetcode.cn/tag/recursion/problemset/)
    2. [回溯](https://leetcode.cn/tag/backtracking/problemset/)
-5. [遍历（枚举）](https://leetcode.cn/tag/enumeration/problemset/)）
+5. [遍历（枚举）](https://leetcode.cn/tag/enumeration/problemset/)
    - [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/problemset/)
    - [深度优先搜索](https://leetcode.cn/tag/depth-first-search/problemset/)
 6. [前缀和](https://leetcode.cn/tag/prefix-sum/problemset/)
