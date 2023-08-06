@@ -69,7 +69,6 @@ public class LC234PalindromeLinkedList {
         return true;
     }
 
-
     ListNode temp;
 
     // 使用递归的方式判断是否是回文链表

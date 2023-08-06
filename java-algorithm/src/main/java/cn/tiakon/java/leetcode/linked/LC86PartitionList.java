@@ -13,7 +13,7 @@ import org.junit.Test;
  */
 public class LC86PartitionList {
     /**
-     * 双指针解法
+     * 模拟流程
      * 复杂度分析
      * 时间度分析：O(N)
      * 空间度分析：O(1)
@@ -55,6 +55,31 @@ public class LC86PartitionList {
         }
         return tempNode.next;
     }
+
+    /**
+     * 创建两个虚拟头结点，将小于x值的节点和大于等于x值的节点分别拆分链接上即可。
+     * @author tiankai.me@gmail.com on 2023-08-06 7:25.
+     */
+    public ListNode partitionV2(ListNode head, int x) {
+        ListNode small = new ListNode(0);
+        ListNode smallHead = small;
+        ListNode large = new ListNode(0);
+        ListNode largeHead = large;
+        while (head != null) {
+            if ((int) head.val < x) {
+                small.next = head;
+                small = small.next;
+            } else {
+                large.next = head;
+                large = large.next;
+            }
+            head = head.next;
+        }
+        large.next = null;
+        small.next = largeHead.next;
+        return smallHead.next;
+    }
+
 
     @Test
     public void case01Test() {
