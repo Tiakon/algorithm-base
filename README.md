@@ -1,6 +1,6 @@
-# Leetcode 代码库
+# Leetcode 攻略
 
-
+本文档将记录本人如何利用LeetCode现有资源刷题的顺序和心得。
 
 ## 1. 解题心得
 
@@ -28,9 +28,45 @@
 
 
 
-## 2. 习题分类
+## 2.学习笔记
 
-### 2.1 数据结构
+[数组类算法](https://leetcode.cn/leetbook/detail/all-about-array/)
+
+[数组和字符串](https://leetcode.cn/leetbook/detail/array-and-string/)
+
+[查找表类算法](https://leetcode.cn/leetbook/detail/all-about-lockup-table/)
+
+[哈希表](https://leetcode.cn/leetbook/detail/hash-table/)
+
+[链表](https://leetcode.cn/leetbook/detail/linked-list/)
+
+[队列&栈](https://leetcode.cn/leetbook/detail/queue-stack/)
+
+[二分查找](https://leetcode.cn/leetbook/detail/binary-search/)
+
+[二叉树](https://leetcode.cn/leetbook/detail/data-structure-binary-tree/)
+
+[二叉搜索树](https://leetcode.cn/leetbook/detail/introduction-to-data-structure-binary-search-tree/)
+
+[前缀树](https://leetcode.cn/leetbook/detail/trie/)
+
+[动态规划路径问题](https://leetcode.cn/leetbook/detail/path-problems-in-dynamic-programming/)
+
+[初级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-easy/)
+
+[中级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-medium/)
+
+[高级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-hard/)
+
+[图解剑指Offer](https://leetcode.cn/leetbook/detail/illustration-of-algorithm/)
+
+[设计数据结构](https://leetcode.cn/leetbook/detail/designing-data-structures/)
+
+
+
+## 3. 习题分类
+
+### 3.1 数据结构
 
 1. [字符串](https://leetcode.cn/tag/string/problemset/)
 2. [数组](https://leetcode.cn/tag/array/problemset/)
@@ -52,7 +88,7 @@
    4. [二叉索引树（树状数组）](https://leetcode.cn/tag/binary-indexed-tree/problemset/)
 6. [图](https://leetcode.cn/tag/graph/problemset/)
 
-### 2.2 算法思想
+### 3.2 算法思想
 
 1. [排序](https://leetcode.cn/tag/sorting/problemset/)
    - [归并排序](https://leetcode.cn/tag/merge-sort/problemset/)
@@ -76,4 +112,15 @@
 11. [动态规划](https://leetcode.cn/tag/dynamic-programming/problemset/)
     1. [最短路径](https://leetcode.cn/tag/shortest-path/problemset/)
     2. [状态压缩](https://leetcode.cn/tag/bitmask/problemset/)
+
+
+
+### 3.3 热门题集
+
+- [LeetCode 75](https://leetcode.cn/studyplan/leetcode-75/)
+- [LeetCode 热题 100](https://leetcode.cn/studyplan/top-100-liked/)
+- [面试经典 150 题](https://leetcode.cn/studyplan/top-interview-150/)
+- [119 经典题变种挑战](https://leetcode.cn/studyplan/coding-interviews-special/)
+- [剑指 Offer](https://leetcode.cn/studyplan/coding-interviews/)
+- [程序员面试金典](https://leetcode.cn/studyplan/cracking-the-coding-interview/)
 
