@@ -72,10 +72,10 @@ class MyHashSetBooleanArray {
 }
 
 class MyHashSetMap {
-    MyHashMap map;
+    LC706MyHashMap map;
 
     public MyHashSetMap() {
-        map = new MyHashMap();
+        map = new LC706MyHashMap();
     }
 
     public void add(int key) {

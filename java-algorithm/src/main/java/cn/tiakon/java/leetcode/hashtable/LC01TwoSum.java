@@ -1,17 +1,11 @@
 package cn.tiakon.java.leetcode.hashtable;
 
-import cn.tiakon.java.utils.MathRandomUtil;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 1. 两数之和
  * https://leetcode.cn/problems/two-sum/
- * 题解
- * https://leetcode.cn/problems/two-sum/solution/by-carlsun-2-sarb/
  *
  * @author Created by Tiakon on 2019/1/8 9:44.
  */
@@ -36,7 +30,6 @@ public class LC01TwoSum {
         return new int[0];
     }
 
-
     /**
      * 使用哈希表，
      * 当需要确定某元素是否出现或存在时，可以使用哈希表。
@@ -59,39 +52,5 @@ public class LC01TwoSum {
         return new int[0];
     }
 
-    @Test
-    public void twoSumTest() {
-        final LC01TwoSum lc01TwoSum = new LC01TwoSum();
-        int[] arr = {2, 7, 11, 15};
-        int target = 9;
-        int[] twoSum = lc01TwoSum.twoSum(arr, target);
-        MathRandomUtil.printArray(twoSum);
-        Assert.assertArrayEquals(new int[]{0, 1}, twoSum);
-
-        arr = new int[]{3, 2, 4};
-        target = 6;
-        twoSum = lc01TwoSum.twoSum(arr, target);
-        MathRandomUtil.printArray(twoSum);
-        Assert.assertArrayEquals(new int[]{1, 2}, twoSum);
-
-
-        arr = new int[]{2, 5, 5, 11};
-        target = 10;
-        twoSum = lc01TwoSum.twoSum(arr, target);
-        MathRandomUtil.printArray(twoSum);
-        Assert.assertArrayEquals(new int[]{1, 2}, twoSum);
-
-        arr = new int[]{3, 3};
-        target = 6;
-        twoSum = lc01TwoSum.twoSum(arr, target);
-        MathRandomUtil.printArray(twoSum);
-        Assert.assertArrayEquals(new int[]{0, 1}, twoSum);
-
-        arr = new int[]{1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1};
-        target = 11;
-        twoSum = lc01TwoSum.twoSum(arr, target);
-        MathRandomUtil.printArray(twoSum);
-        Assert.assertArrayEquals(new int[]{5, 11}, twoSum);
-    }
 
 }
