@@ -1,6 +1,5 @@
 package cn.tiakon.java.leetcode.sampling;
 
-import java.sql.Array;
 import java.util.*;
 
 /**
