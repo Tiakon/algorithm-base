@@ -10,7 +10,7 @@ import cn.tiakon.java.leetcode.datastructure.ListNode;
  */
 public class LC02AddTwoNumbers {
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode currentNode1 = l1;
         ListNode currentNode2 = l2;
         ListNode sumNode = new ListNode((int) currentNode1.val + (int) currentNode2.val);
@@ -26,27 +26,4 @@ public class LC02AddTwoNumbers {
         return sumNode;
     }
 
-    public static void main(String[] args) {
-        ListNode list1Node1 = new ListNode(3);
-        ListNode list1Node2 = new ListNode(4);
-        list1Node1.next = list1Node2;
-        ListNode list1Node3 = new ListNode(2);
-        list1Node2.next = list1Node3;
-
-        ListNode list2Node1 = new ListNode(4);
-        ListNode list2Node2 = new ListNode(6);
-        list2Node1.next = list2Node2;
-        ListNode list2Node3 = new ListNode(5);
-        list2Node2.next = list2Node3;
-        ListNode newNode = addTwoNumbers(list1Node1, list2Node1);
-        ListNode currentNode = newNode;
-//        ListNode currentNode = list1Node1;
-//        ListNode currentNode = list2Node1;
-        do {
-            System.out.println(currentNode.val);
-            currentNode = currentNode.next;
-        } while (currentNode != null);
-
-    }
 }
-

@@ -15,6 +15,7 @@ public class LC24SwapNodesInPairs {
      * 复杂度分析
      * 时间度分析：O(n)
      * 空间度分析：O(1)
+     *
      * @author tiankai.me@gmail.com on 2023-08-06 14:26.
      */
     public ListNode swapPairs(ListNode head) {
@@ -40,29 +41,5 @@ public class LC24SwapNodesInPairs {
         head.next = swapPairsV2(newHead.next);
         newHead.next = head;
         return newHead;
-    }
-
-    @Test
-    public void case01Test() {
-        final LC24SwapNodesInPairs swapNodesInPairs = new LC24SwapNodesInPairs();
-        final ListNode node4 = new ListNode(4);
-        final ListNode node3 = new ListNode(3, node4);
-        final ListNode node2 = new ListNode(2, node3);
-        final ListNode head = new ListNode(1, node2);
-        final ListNode ans = swapNodesInPairs.swapPairs(head);
-        MathRandomUtil.printListNode(ans);
-    }
-
-    @Test
-    public void case02Test() {
-        final LC24SwapNodesInPairs swapNodesInPairs = new LC24SwapNodesInPairs();
-        final ListNode node6 = new ListNode(6);
-        final ListNode node5 = new ListNode(5,node6);
-        final ListNode node4 = new ListNode(4,node5);
-        final ListNode node3 = new ListNode(3, node4);
-        final ListNode node2 = new ListNode(2, node3);
-        final ListNode head = new ListNode(1, node2);
-        final ListNode ans = swapNodesInPairs.swapPairs(head);
-        MathRandomUtil.printListNode(ans);
     }
 }
