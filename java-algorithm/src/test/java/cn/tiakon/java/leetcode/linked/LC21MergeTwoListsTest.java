@@ -1,6 +1,7 @@
 package cn.tiakon.java.leetcode.linked;
 
 import cn.tiakon.java.leetcode.datastructure.ListNode;
+import cn.tiakon.java.leetcode.linked.merge.LC21MergeTwoLists;
 import cn.tiakon.java.utils.MathRandomUtil;
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package cn.tiakon.java.leetcode.linked;
+package cn.tiakon.java.leetcode.linked.merge;
 
 import cn.tiakon.java.leetcode.datastructure.ListNode;
 import cn.tiakon.java.utils.MathRandomUtil;
