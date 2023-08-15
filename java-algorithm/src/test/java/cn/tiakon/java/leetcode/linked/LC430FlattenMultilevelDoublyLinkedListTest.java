@@ -36,7 +36,7 @@ public class LC430FlattenMultilevelDoublyLinkedListTest {
         node12.prev = node11;
 
         final NodeV2 ans = flattenMultilevelDoublyLinkedList.flatten(node1);
-        System.out.println(ans);
+        printLinkedNode(ans);
     }
 
     @Test
@@ -50,6 +50,17 @@ public class LC430FlattenMultilevelDoublyLinkedListTest {
         node2.child = node3;
 
         final NodeV2 ans = flattenMultilevelDoublyLinkedList.flatten(node1);
-        System.out.println(ans);
+        printLinkedNode(ans);
     }
+
+    public static void printLinkedNode(NodeV2 node) {
+        final StringBuilder builder = new StringBuilder();
+        while (node != null) {
+            builder.append(node.val);
+            if (node.next != null) builder.append(",");
+            node = node.next;
+        }
+        System.out.println(builder);
+    }
+
 }

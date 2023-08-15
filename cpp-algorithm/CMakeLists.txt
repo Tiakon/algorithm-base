@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.17)
-project(cpp_algorithm)
+project(cpp-algorithm)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cpp_algorithm LC66PlusOne.cpp)
+add_executable(LC66PlusOne LC66PlusOne.cpp)

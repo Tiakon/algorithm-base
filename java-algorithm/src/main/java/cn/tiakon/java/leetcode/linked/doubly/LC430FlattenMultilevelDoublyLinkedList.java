@@ -15,8 +15,8 @@ public class LC430FlattenMultilevelDoublyLinkedList {
         return head;
     }
 
-    public NodeV2 flattenNode(NodeV2 head) {
-        NodeV2 curr = head;
+    public NodeV2 flattenNode(NodeV2 node) {
+        NodeV2 curr = node;
         while (curr != null && curr.next != null) {
             NodeV2 childHead = curr.child;
             while (childHead != null) {

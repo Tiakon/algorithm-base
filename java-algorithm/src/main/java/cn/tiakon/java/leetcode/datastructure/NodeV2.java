@@ -1,6 +1,6 @@
 package cn.tiakon.java.leetcode.datastructure;
 
-public   class NodeV2 {
+public class NodeV2 {
     public int val;
     public NodeV2 prev;
     public NodeV2 next;
