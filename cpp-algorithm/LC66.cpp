@@ -8,7 +8,7 @@ using namespace std;
  * https://leetcode.cn/problems/plus-one/
  *
  * */
-class LC66PlusOne {
+class LC66 {
  public:
   vector<int> plusOne(vector<int> &digits) {
     int carry = 1;
@@ -27,7 +27,7 @@ class LC66PlusOne {
 };
 
 int main() {
-  LC66PlusOne *plusOne = new LC66PlusOne();
+  LC66 *plusOne = new LC66();
   vector<int> ve{1, 2, 3, 4};
   vector<int> ans = plusOne->plusOne(ve);
   for (int i:ans) {
