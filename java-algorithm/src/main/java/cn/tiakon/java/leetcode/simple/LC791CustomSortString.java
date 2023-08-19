@@ -19,31 +19,20 @@ public class LC791CustomSortString {
         for (char c : T.toCharArray()) {
             count[c - 'a']++;
         }
-
         // 使用 StringBuilder 拼接最终结果
         StringBuilder ans = new StringBuilder();
-
         // 按照排序顺序追加字符
         for (char c : S.toCharArray()) {
             for (int i = 0; i < count[c - 'a']; ++i)
                 ans.append(c);
             count[c - 'a'] = 0;
         }
-
         // 追加剩余字符到结果中
         for (char c = 'a'; c <= 'z'; ++c)
             for (int i = 0; i < count[c - 'a']; ++i)
                 ans.append(c);
-
         return ans.toString();
     }
 
-    // char 类型可以转换成 int 类型，代表 ASCII码（ASCII 表中字母对应的数值）。
-    @Test
-    public void ASCII01Test() {
-        System.out.println("H" + "A"); //HA
-        //  ASCII 表H=72 和a=97
-        System.out.println('H' + 'a'); //169
-    }
 
 }

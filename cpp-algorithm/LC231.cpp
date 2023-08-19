@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 
 /**
@@ -20,6 +20,18 @@ class LC231 {
       n = n / 2;
     }
     return true;
+  }
+  // 若n等于2的x次方 , 恒有 n&(n-1)==0
+  // n   二进制最高位为 1, 其余所有位为 0
+  // n−1 二进制最高位为 0, 其余所有位为 1
+  // 一定满足 n>0
+  bool isPowerOfTwoV1(int n) {
+    return n > 0 && (n & (n - 1)) == 0;
+  }
+  // 求出以2为底n的对数是x，是否等于整数。
+  bool isPowerOfTwoV2(int n) {
+    if (n <= 0) return false;
+    return (log2(n) == int(log2(n)));
   }
 };
 
