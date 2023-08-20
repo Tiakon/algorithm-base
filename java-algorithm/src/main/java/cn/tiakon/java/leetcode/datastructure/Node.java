@@ -5,17 +5,27 @@ import java.util.List;
 
 public class Node {
     public int val;
-    public List<Node> children= Collections.emptyList();
+    public List<Node> children = Collections.emptyList();
+
+    public Node prev;
+    public Node next;
+    public Node child;
 
     public Node() {
     }
 
-    public Node(int _val) {
-        val = _val;
+    public Node(int val) {
+        this.val = val;
     }
 
-    public Node(int _val, List<Node> _children) {
-        val = _val;
-        children = _children;
+    public Node(int val, List<Node> children) {
+        this.val = val;
+        this.children = children;
     }
+
+    public Node(int val, Node next) {
+        this.val = val;
+        this.next = next;
+    }
+
 }

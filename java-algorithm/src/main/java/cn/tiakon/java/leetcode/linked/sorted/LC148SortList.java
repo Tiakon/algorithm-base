@@ -11,10 +11,14 @@ import cn.tiakon.java.leetcode.datastructure.ListNode;
 public class LC148SortList {
 
     /**
-     * 归并排序（递归法）
+     * 自顶向下归并排序（递归法）
+     * 使用自底向上的方法实现归并排序，则可以达到 O(1)的空间复杂度。
+     * 首先求得链表的长度 length ，然后将链表拆分成子链表进行合并。
      * <p>
-     * 时间复杂度 :
+     * 时间复杂度 : O(nlogn)，n为链表的长度。
      * 空间复杂度 : O(logn),递归调用函数将带来 O(logn) 的空间复杂度。
+     * <p>
+     * https://leetcode.cn/problems/sort-list/solutions/13728/sort-list-gui-bing-pai-xu-lian-biao-by-jyd/
      *
      * @author tiankai.me@gmail.com on 2023-08-07 23:08.
      */
@@ -27,8 +31,8 @@ public class LC148SortList {
         }
         ListNode tmp = slow.next;
         slow.next = null;
-        ListNode left = sortListV2(head);
-        ListNode right = sortListV2(tmp);
+        ListNode left = sortList(head);
+        ListNode right = sortList(tmp);
         ListNode h = new ListNode(0);
         ListNode res = h;
         while (left != null && right != null) {
@@ -46,52 +50,66 @@ public class LC148SortList {
     }
 
     /**
-     * 找中间位置 + 递归 + 合并链表
-     * 时间复杂度: O(nlogn)
+     * 自底向上归并排序
+     * 时间复杂度: O(nlogn)，其中 n 是链表的长度。
      * 空间复杂度:O(1)
      *
      * @author tiankai.me@gmail.com on 2023-08-07 22:44.
      */
     public ListNode sortListV2(ListNode head) {
-        // 1、递归结束条件
-        if (head == null || head.next == null) return head;
-        // 2、找到链表中间节点并断开链表 & 递归下探
-        ListNode midNode = middleNode(head);
-        ListNode rightHead = midNode.next;
-        midNode.next = null;
-        ListNode left = sortListV2(head);
-        ListNode right = sortListV2(rightHead);
-        // 3、当前层业务操作（合并有序链表）
-        return mergeTwoLists(left, right);
-    }
-
-    //  找到链表中间节点（876. 链表的中间结点）
-    private ListNode middleNode(ListNode head) {
-        if (head == null || head.next == null) return head;
-        ListNode slow = head;
-        ListNode fast = head.next.next;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+        if (head == null) return head;
+        int length = 0;
+        ListNode node = head;
+        while (node != null) {
+            length++;
+            node = node.next;
         }
-        return slow;
-    }
-
-    // 合并两个有序链表（21. 合并两个有序链表）
-    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode sentry = new ListNode(-1);
-        ListNode curr = sentry;
-        while (l1 != null && l2 != null) {
-            if ((int) l1.val < (int) l2.val) {
-                curr.next = l1;
-                l1 = l1.next;
-            } else {
-                curr.next = l2;
-                l2 = l2.next;
+        ListNode dummyHead = new ListNode(0, head);
+        for (int subLength = 1; subLength < length; subLength <<= 1) {
+            ListNode prev = dummyHead, curr = dummyHead.next;
+            while (curr != null) {
+                ListNode head1 = curr;
+                for (int i = 1; i < subLength && curr.next != null; i++) {
+                    curr = curr.next;
+                }
+                ListNode head2 = curr.next;
+                curr.next = null;
+                curr = head2;
+                for (int i = 1; i < subLength && curr != null && curr.next != null; i++) {
+                    curr = curr.next;
+                }
+                ListNode next = null;
+                if (curr != null) {
+                    next = curr.next;
+                    curr.next = null;
+                }
+                ListNode merged = merge(head1, head2);
+                prev.next = merged;
+                while (prev.next != null) {
+                    prev = prev.next;
+                }
+                curr = next;
             }
-            curr = curr.next;
         }
-        curr.next = l1 != null ? l1 : l2;
-        return sentry.next;
+        return dummyHead.next;
     }
+
+    public ListNode merge(ListNode head1, ListNode head2) {
+        ListNode dummyHead = new ListNode(0);
+        ListNode temp = dummyHead, temp1 = head1, temp2 = head2;
+        while (temp1 != null && temp2 != null) {
+            if ((int) temp1.val <= (int) temp2.val) {
+                temp.next = temp1;
+                temp1 = temp1.next;
+            } else {
+                temp.next = temp2;
+                temp2 = temp2.next;
+            }
+            temp = temp.next;
+        }
+        if (temp1 != null) temp.next = temp1;
+        else if (temp2 != null) temp.next = temp2;
+        return dummyHead.next;
+    }
+
 }
