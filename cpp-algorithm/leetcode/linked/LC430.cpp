@@ -2,26 +2,12 @@
 
 #include<vector>
 using namespace std;
-
+#include "../structure/Node.h"
 /**
  * 430. 扁平化多级双向链表
  * https://leetcode.cn/problems/flatten-a-multilevel-doubly-linked-list/
  *
  * */
-class Node {
- public:
-  int val;
-  Node *prev = nullptr;
-  Node *next = nullptr;
-  Node *child = nullptr;
-  Node(int val) {
-    this->val = val;
-  }
-  Node(int val, Node *next) {
-    this->val = val;
-    this->next = next;
-  }
-};
 
 class LC430 {
  private:
@@ -71,11 +57,12 @@ int main() {
   node1.next = &node2;
   node1.child = &node3;
 
-//  *node2.prev = node1;  //这样写是错误的，程序会直接退出且不会打印错误
-//  *node1.next = node2;
+//  *node2.prev = node1;  // 这样写是错误的，程序会直接退出且不会打印错误。
+//  *node1.next = node2;  // node2是普通变量，所以不能使用*接引运算符。而应该使用取地址符
 //  *node1.child = node3;
 
   Node *ans = lc->flatten(&node1);
+
   while (ans) {
     cout << ans->val << " ";
     ans = ans->next;
