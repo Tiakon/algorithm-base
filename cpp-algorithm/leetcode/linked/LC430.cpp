@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include<vector>
 using namespace std;
 #include "../structure/Node.h"
 /**
@@ -8,7 +7,6 @@ using namespace std;
  * https://leetcode.cn/problems/flatten-a-multilevel-doubly-linked-list/
  *
  * */
-
 class LC430 {
  private:
   Node *dfs(Node *head) {
