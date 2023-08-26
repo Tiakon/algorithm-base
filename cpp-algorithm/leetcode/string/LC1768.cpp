@@ -53,5 +53,5 @@ int main(int argc, char **argv) {
   ans = lc1768l.mergeAlternately(w1, w2);
   if (ans == "hweolrldo!!!")cout << "pass" << endl;
   else cout << "error: " << ans << endl;
-
+  return 0;
 }
