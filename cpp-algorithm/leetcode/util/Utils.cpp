@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void assertEqualInt(int actual, int expect) {
+void assertEqualInt(int expect,int actual) {
   if (expect == actual) cout << "pass" << endl;
   else cout << "error!" << actual << endl;
 }

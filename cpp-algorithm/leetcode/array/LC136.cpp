@@ -33,10 +33,10 @@ int main(int argc, char **argv) {
 
   vector<int> nums{2, 2, 1};
   int ans = lc136.singleNumber(nums);
-  assertEqualInt(ans, 1);
+  assertEqualInt(1,ans);
   nums = {4, 1, 2, 1, 2};
   ans = lc136.singleNumber(nums);
-  assertEqualInt(ans, 4);
+  assertEqualInt(4,ans);
 
   return 0;
 }
