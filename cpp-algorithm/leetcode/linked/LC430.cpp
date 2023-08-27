@@ -1,7 +1,7 @@
-#include <iostream>
 
 using namespace std;
 #include "../structure/Node.h"
+#include "../util/Utils.h"
 /**
  * 430. 扁平化多级双向链表
  * https://leetcode.cn/problems/flatten-a-multilevel-doubly-linked-list/
@@ -61,10 +61,7 @@ int main() {
 
   Node *ans = lc->flatten(&node1);
 
-  while (ans) {
-    cout << ans->val << " ";
-    ans = ans->next;
-  }
+  printNode(ans);
 
   return 0;
 }
