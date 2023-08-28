@@ -9,6 +9,7 @@ add_executable(LC2682 leetcode/array/LC2682.cpp)
 add_executable(LC136 leetcode/array/LC136.cpp leetcode/util/Utils.h leetcode/util/Utils.cpp)
 add_executable(LC283 leetcode/array/LC283.cpp)
 add_executable(LC1979 leetcode/array/LC1979.cpp leetcode/util/Utils.h leetcode/util/Utils.cpp)
+add_executable(LC1822 leetcode/array/LC1822.cpp)
 
 add_executable(LC258 leetcode/math/LC258.cpp)
 add_executable(LC231 leetcode/bitopt/LC231.cpp)
