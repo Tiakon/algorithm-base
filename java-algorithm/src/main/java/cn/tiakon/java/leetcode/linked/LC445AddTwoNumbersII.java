@@ -15,6 +15,7 @@ public class LC445AddTwoNumbersII {
 
     /**
      * 反转链表
+     *
      * @author tiankai.me@gmail.com on 2023-08-29 23:41.
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -71,24 +72,19 @@ public class LC445AddTwoNumbersII {
             stack2.push((int) l2.val);
             l2 = l2.next;
         }
-        ListNode dummy = new ListNode();
-        ListNode curr = dummy;
         int carry = 0;
-        while (!stack1.isEmpty() || !stack2.isEmpty()) {
-            int sum;
-            if (stack1.isEmpty()) sum = stack2.pop() + carry;
-            else if (stack2.isEmpty()) sum = stack1.pop() + carry;
-            else sum = stack2.pop() + stack1.pop() + carry;
-            // 使用头插入的方式插入链表。
-            ListNode next = curr.next;
-            curr.next = new ListNode(sum % 10, next);
-            carry = sum >= 10 ? 1 : 0;
+        ListNode ans = null;
+        while (!stack1.isEmpty() || !stack2.isEmpty() || carry != 0) {
+            int a = stack1.isEmpty() ? 0 : stack1.pop();
+            int b = stack2.isEmpty() ? 0 : stack2.pop();
+            int sum = a + b + carry;
+            carry = sum / 10;
+            sum %= 10;
+            ListNode node = new ListNode(sum);  // 这种不需要虚拟头结点的插入链表的操作更简洁。
+            node.next = ans;
+            ans = node;
         }
-        if (carry == 1) {
-            ListNode next = curr.next;
-            curr.next = new ListNode(1, next);
-        }
-        return dummy.next;
+        return ans;
     }
 
 }
