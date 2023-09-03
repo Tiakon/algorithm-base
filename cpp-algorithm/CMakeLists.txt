@@ -24,6 +24,7 @@ add_executable(LC817 leetcode/linked/LC817.cpp leetcode/structure/ListNode.h lee
 add_executable(LC2181 leetcode/linked/LC2181.cpp leetcode/structure/ListNode.h leetcode/util/Utils.h leetcode/util/Utils.cpp)
 add_executable(LC445 leetcode/linked/LC445.cpp leetcode/structure/ListNode.h leetcode/util/Utils.h leetcode/util/Utils.cpp)
 add_executable(LC1721 leetcode/linked/LC1721.cpp leetcode/structure/ListNode.h leetcode/util/Utils.h leetcode/util/Utils.cpp)
+add_executable(LC1472 leetcode/linked/LC1472.cpp)
 
 add_executable(LC1768 leetcode/string/LC1768.cpp)
 add_executable(LC389 leetcode/string/LC389.cpp)

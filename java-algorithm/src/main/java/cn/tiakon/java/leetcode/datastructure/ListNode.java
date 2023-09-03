@@ -1,6 +1,6 @@
 package cn.tiakon.java.leetcode.datastructure;
 // class ListNode {
-//    public ListNode pre;
+//    public ListNode prev;
 //    public int val;
 //    public ListNode next;
 //    public ListNode() {
@@ -12,12 +12,12 @@ package cn.tiakon.java.leetcode.datastructure;
 //        this.val = val;
 //        this.next = next;
 //    }
-// public ListNode(ListNode pre, int val, ListNode next) {
-//         this.pre = pre;
+// public ListNode(ListNode prev, int val, ListNode next) {
+//         this.prev = prev;
 //         this.val = val;
 //         this.next = next;
 // }
-//}
+// }
 
 /**
  * 单链表
