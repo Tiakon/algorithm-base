@@ -11,7 +11,14 @@ import org.junit.Test;
  * @author tiankai.me@gmail.com on 2023-09-04 14:48.
  */
 public class LC147InsertionSortList {
-
+    /**
+     * 在新链表上插入。
+     * 复杂度分析
+     * 时间复杂度： O(n^2)，其中 n 是链表的长度。
+     * 空间复杂度： O(1)
+     *
+     * @author tiankai.me@gmail.com on 2023-09-05 21:22.
+     */
     public ListNode insertionSortList(ListNode head) {
         ListNode dummy = new ListNode(Integer.MIN_VALUE);
         ListNode curr = head;
@@ -37,6 +44,14 @@ public class LC147InsertionSortList {
         return dummy.next;
     }
 
+    /**
+     * 在原链表上插入。
+     * 复杂度分析
+     * 时间复杂度： O(n^2)，其中 n 是链表的长度。
+     * 空间复杂度： O(1)
+     *
+     * @author tiankai.me@gmail.com on 2023-09-05 21:22.
+     */
     public ListNode insertionSortListV2(ListNode head) {
         if (head == null) return head;
         ListNode dummyHead = new ListNode(0);

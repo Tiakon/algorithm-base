@@ -1,9 +1,5 @@
 package cn.tiakon.java.leetcode.linked.design;
 
-import cn.tiakon.java.utils.MathRandomUtil;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.*;
 
 /**
